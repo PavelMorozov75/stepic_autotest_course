@@ -1,0 +1,7 @@
+# created by virtualenv automatically
+.pytest_cache
+__pycaсhe__
+env
+.idea
+.git
+
