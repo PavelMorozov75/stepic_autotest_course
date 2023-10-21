@@ -29,7 +29,7 @@ def browser(request):
         browser = webdriver.Chrome(options=options)
     elif browser_name == "firefox":
         print("\nstart firefox browser for test..")
-        browser = webdriver.Firefox(executable_path=GeckoDriverManager().install(), options=options_firefox)
+        browser = webdriver.Firefox(executable_path=GeckoDriverManager().install(), options=options_firefox) 
     else:
         raise pytest.UsageError("--browser_name should be chrome or firefox")
     yield browser

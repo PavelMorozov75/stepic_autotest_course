@@ -117,7 +117,8 @@ print(closest_mod_5(21))
 def print_ab(a, b=50):
     print(a)
     print(b)
-    
+
+
 
 args = {'a': 10, 'b': 20}
 lst = [11, 12]
@@ -125,6 +126,7 @@ print_ab(**args)
 print_ab(*args)
 print_ab(*lst)
 '''
+
 
 '''
 def print_abc (a, b , *aargs):
@@ -314,7 +316,7 @@ dog = Dog('Шарик', 'черный')
 human = Human('Вася')
 human.adopt_dog(dog)
 human.print_dog_name()
-human.my_dog.bark()
+human.my_dog.bark()       # !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 human.print_human_name()
 
 
@@ -557,6 +559,7 @@ class Mylist(list):
 for pair in Mylist([1,2,2,4]):
     print((pair))
 '''
+
 '''
 from random import random
 def random_generator(k):
@@ -749,21 +752,25 @@ print(k)
 '''
 x = input().split()
 k, n = (int(i) for i in x)
-print(k + n)
+print(k+n)
 '''
+
 
 '''
 x = input().split()
 xs = (int(i) for i in x)
+
 print(xs)
 def eaven(a):
     return a % 2 ==0
 
 p = filter(eaven, xs)
 print(p)
-for i in p:
-    print(i)
+for j in p:
+    print(j)
 '''
+
+
 
 '''
 x = input().split()
@@ -955,8 +962,10 @@ fedor.buy_house(house, 3)
 #print("cabcd"[1:].find("abc"))
 #print(str.find.__doc__)
 
-#s = 'asadfa'
-#print(s[1:3])
+'''
+s = 'asadfa'
+print(s[1:3])
+'''
 
 #print("cabcd".index("abc"))  # индекс первого вхождения или ValueError
 
@@ -1074,7 +1083,166 @@ match_objeckt = re.match(pattern, string)
 print(match_objeckt)
 
 '''
-
+'''
 import math
 fun = lambda x : 1 if x == 1 else math.ceil(math.sinh(fun (x-1)))
 print(fun(5))
+'''
+import requests
+
+'''
+payload = {'key1': 'value1', 'key2': 'value2'}
+r = requests.get('https://httpbin.org/get', params=payload)
+'''
+
+'''
+res = requests.get('https://api.github.com/events')
+print(res.url)
+#print(res.json())
+#print(res.headers['content-type'])
+#print(res.content)
+print(res.encoding)
+#print(res.text)
+'''
+
+'''
+url = 'https://api.github.com/some/endpoint'
+headers = {'user-agent': 'my-app/0.0.1'}
+r = requests.get(url, headers=headers)
+print(r.json())
+print(r.text)
+'''
+
+'''
+payload = {'key1': 'value1', 'key2': 'value2'}
+r = requests.post("https://httpbin.org/post", data=payload)
+#print(r.text)
+print(r.status_code)
+'''
+
+'''
+url = 'http://example.com/some/cookie/setting/url'
+r = requests.get(url)
+#print(r.cookies['example_cookie_name'])
+'''
+
+'''
+url = 'https://httpbin.org/cookies'
+cookies = dict(cookies_are='working')
+r = requests.get(url, cookies=cookies)
+print(r.text)
+'''
+
+'''
+r = requests.get('http://digitology.tech/')
+print(r.url)
+print(r.status_code)
+print(r.history)
+'''
+
+#requests.get('https://digitology.tech/', timeout=0.001)
+
+'''
+url = 'https://api.github.com/some/endpoint'
+payload = {'some': 'data'}
+r = requests.post(url, json=payload)
+'''
+
+'''
+r = requests.get('https://api.github.com/events', stream=True)
+print(r.raw)
+'''
+
+'''
+s = requests.Session()
+s.auth = ('user', 'pass')
+s.headers.update({'x-test': 'true'})
+
+# отправляются как «x-test», так и «x-test2»
+r = s.get('https://httpbin.org/headers', headers={'x-test2': 'true'})
+print (r.text)
+'''
+
+'''
+with requests.Session() as s:
+    r = s.get('https://httpbin.org/cookies/set/sessioncookie/123456789', headers={'x-test2': 'true'})
+print(r.text)
+print(r.content)
+print(r.headers)
+'''
+
+
+'''
+r = requests.get('https://en.wikipedia.org/wiki/Monty_Python')
+print(r.headers)
+print(r.request.headers) # заголовок запроса!!!!!!!!!!!!!!!!!!!!!!!!!! ???????
+'''
+
+'''
+import os, os.path
+#(__file__) - текущий исполняемый файл
+current_dir = os.path.abspath(os.path.dirname(__file__))    # получаем путь к директории текущего исполняемого файла
+#print(current_dir)
+
+file_path = os.path.join(current_dir, 'file.txt')
+#print(file_path)
+print(os.path.abspath(__file__))
+
+print(os.path.dirname(__file__))
+
+'''
+
+'''
+f =3
+g =5
+c = f if g > 5 else None
+print(c)
+'''
+
+'''
+class Gross:
+    a = [2,3,4,5,6,6,7]
+    print(a[1:5])
+    print(a[4:])
+    print(len(a))
+
+b = Gross()
+print(b.__class__)
+print(b.__class__.__module__.split('.')[0:])
+'''
+
+'''
+params = {'param1': 1, 'param2': 2, 'param3': 3}
+param_string = '\n'.join(["{0}: {1}".format(k, v) for k, v in params.items()])
+print(param_string)
+import json
+print(json.dumps(params))
+'''
+
+'''
+class MyClass:
+    def __init__(self, url):
+        self.url = url
+
+    def get_url(self, path):
+        return '{0}/{1}'.format(self.url, path.strip('/'))
+
+obj = MyClass('http://www.example.com')
+print(obj.get_url('/test/path/'))
+'''
+
+'''
+message = "Hello"
+message += f"""
+This is a multiline string.
+It's part of the message.
+"""
+print(message)
+'''
+
+'''
+resp_status_code = 100
+status_code = 200
+ok = resp_status_code == status_code
+'''
+
