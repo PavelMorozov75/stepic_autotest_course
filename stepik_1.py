@@ -715,18 +715,26 @@ print(current_dir)
 print(os.pardir)
 #os.chdir(os.pardir)
 print(current_dir)
-print(os.path.exists('main.py'))
-print(os.path.isfile('main.py'))
-print(os.path.isdir('main.py'))
-print(os.path.abspath('main.py'))
+print(os.path.exists('stepik1.py'))
+print(os.path.isfile('stepik1.py'))
+print(os.path.isdir('stepik1.py'))
+print(os.path.abspath('stepik1.py'))
+
+path = os.path.dirname(__file__)
+print(path)
+current_dir = os.path.abspath(os.path.dirname(__file__))  # получаем путь к директории текущего исполняемого файла
+print(current_dir)
+file_path = os.path.join(current_dir, 'file.txt')
+print(file_path)
+
 #for current_dir, dirs, files in os.walk("."):
     #print(current_dir, dirs, files)
 
 #import shutil
 #shutil.copy('test.txt', 'test25.txt')
 #shutil.copytree('test', 'test/test')# копируем каталог целиком
-
 '''
+
 
 '''
 n, k = map(int, input().split())
@@ -840,6 +848,7 @@ y = ['abc', 'cba', 'abb']
 sort_by_last(y)
 print(y)
 '''
+
 '''
 import operator
 inventory = [('apple', 3), ('banana', 2), ('pear', 5), ('orange', 1)]
@@ -967,6 +976,7 @@ s = 'asadfa'
 print(s[1:3])
 '''
 
+'''
 #print("cabcd".index("abc"))  # индекс первого вхождения или ValueError
 
 
@@ -1027,6 +1037,9 @@ s = '1  2 3 4'
 #print(template.format(country="Liechtenstein", capital="Vaduz"))
 
 '''
+
+
+'''
 import requests
 template = "Response from {0.url} with code {0.status_code}"
 #
@@ -1083,6 +1096,8 @@ match_objeckt = re.match(pattern, string)
 print(match_objeckt)
 
 '''
+
+
 '''
 import math
 fun = lambda x : 1 if x == 1 else math.ceil(math.sinh(fun (x-1)))
@@ -1094,6 +1109,7 @@ import requests
 payload = {'key1': 'value1', 'key2': 'value2'}
 r = requests.get('https://httpbin.org/get', params=payload)
 '''
+
 
 '''
 res = requests.get('https://api.github.com/events')
@@ -1178,19 +1194,22 @@ print(r.headers)
 print(r.request.headers) # заголовок запроса!!!!!!!!!!!!!!!!!!!!!!!!!! ???????
 '''
 
+
 '''
 import os, os.path
 #(__file__) - текущий исполняемый файл
 current_dir = os.path.abspath(os.path.dirname(__file__))    # получаем путь к директории текущего исполняемого файла
-#print(current_dir)
+print(current_dir)
 
 file_path = os.path.join(current_dir, 'file.txt')
+
 #print(file_path)
 print(os.path.abspath(__file__))
 
 print(os.path.dirname(__file__))
-
 '''
+
+
 
 '''
 f =3
@@ -1199,7 +1218,7 @@ c = f if g > 5 else None
 print(c)
 '''
 
-'''
+
 class Gross:
     a = [2,3,4,5,6,6,7]
     print(a[1:5])
@@ -1209,7 +1228,8 @@ class Gross:
 b = Gross()
 print(b.__class__)
 print(b.__class__.__module__.split('.')[0:])
-'''
+
+
 
 '''
 params = {'param1': 1, 'param2': 2, 'param3': 3}
@@ -1235,8 +1255,7 @@ print(obj.get_url('/test/path/'))
 message = "Hello"
 message += f"""
 This is a multiline string.
-It's part of the message.
-"""
+It's part of the message. """
 print(message)
 '''
 
